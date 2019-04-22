@@ -44,22 +44,22 @@ struct s{
 int main(int argc, char* argv[])
 {
 
-    i l = 10;
-    i a = true;
-    i E = false;
-    i w = 480, h = 640;
-    i D[2] = {0,0};
+    i l=10;
+    i a=1;
+    i E=-1;
+    i w=480,h=640;
+    i D[2]={0,0};
     SDL_Window *W;
     SDL_Renderer *R;
-    SDL_Rect f = {465,465,10,10};
-    s S = s(++l);
+    SDL_Rect f={465,465,10,10};
+    s S=s(++l);
     W=SDL_CreateWindow("S",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,h,w,SDL_WINDOW_OPENGL);
     R=SDL_CreateRenderer(W, -1, SDL_RENDERER_ACCELERATED );
     while(a)
     {
-        if(E)f.x =  25 + (11 * (rand()%(54 + 1))), f.y = 25 + (11 * (rand()%(40 + 1))),E = false;
+        if(E)f.x=25+(11*(rand()%(54+1))),f.y=25+(11*(rand()%(40+1))),E=-1;
         SDL_Event e;
-        while(SDL_PollEvent(&e)!= 0) 
+        while(SDL_PollEvent(&e)!=0) 
         { 
             a=S.d();
             if(e.type==SDL_QUIT)a=!a;  
@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
             { 
                 switch(e.key.keysym.sym) 
                 { 
-                    case SDLK_UP: D[0]=0,D[1]=-l;break; 
+                    case SDLK_UP:D[0]=0,D[1]=-l;break; 
                     case SDLK_DOWN:D[0]=0,D[1]=l;break; 
                     case SDLK_LEFT:D[0]=-l,D[1]=0;break; 
                     case SDLK_RIGHT:D[0]=l,D[1]=0;break; 
@@ -75,10 +75,10 @@ int main(int argc, char* argv[])
                 } 
             } 
         }
-        SDL_SetRenderDrawColor(R, 0x00, 0x00, 0x00, 0x00 );
+        SDL_SetRenderDrawColor(R,0x00,0x00,0x00,0x00);
         SDL_RenderClear(R);
-        E = S.e(f.x,f.y);
-        S.m(D, h, w, E);
+        E=S.e(f.x,f.y);
+        S.m(D,h,w,E);
         S.R(R);
         SDL_RenderFillRect(R,&f);
         SDL_RenderPresent(R);
