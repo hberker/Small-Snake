@@ -1,3 +1,6 @@
+/*
+    Small Snake
+*/
 #include <SDL2/SDL.h>
 #include <vector>
 #define P while
